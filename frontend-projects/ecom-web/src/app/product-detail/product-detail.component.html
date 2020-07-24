@@ -1,0 +1,49 @@
+<div *ngIf="currentProduct">
+      <div class="panel panel-default" *ngIf="mode==0">
+        <div class="panel-heading">Fiche Produit: {{currentProduct.name}}
+          <span class="glyphicon glyphicon-edit pull-right btn" (click)="onEditProduct()"></span>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-5">
+          <img class="img-thumbnail img-rounded btn"  src="{{this.catalService.host+'/photoProduct/'+currentProduct.id+'?ts='+getTS()}}"/>
+          <div *ngIf="authService.isAdmin()">
+            <button (click)="onEditPhoto(currentProduct)">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <p *ngIf="editPhoto">
+              <input type="file" (change)="onSelectedFile($event)">
+              <button class="btn btn-success" (click)="uploadPhoto()">Upload</button>
+              {{progress}}
+            </p>
+          </div>
+          <div>
+            {{currentProduct.description}}
+          </div>
+          <div>
+            <label>Price: {{currentProduct.currentprice | number:'0.2'}}</label>
+          </div>
+          <div>
+              <span *ngIf="currentProduct.promotion">
+<!--                <img src="assets/images/promo.png" class="img-thumbnail img-circle" height="10">-->
+              </span>
+            <span *ngIf="currentProduct.selected">
+<!--                <img src="assets/images/favorite.png" class="img-thumbnail img-circle" height="10">-->
+              </span>
+            <span *ngIf="currentProduct.available">
+<!--                <img src="assets/images/available.png" class="img-thumbnail img-circle" height="10">-->
+              </span>
+          </div>
+          <div>
+            <form #f="ngForm" (ngSubmit)="onAddProductToCaddy(currentProduct)">
+              <label class="control-label">Quantite:</label>
+              <input type="number" name="quantity" [(ngModel)]="currentProduct.quantity" [ngModel] style="width: 40px">
+              <button>Add to caddy</button>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+

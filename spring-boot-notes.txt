@@ -1,0 +1,42 @@
+SGBD systeme de gestion de base de donnees.
+SGBD relationnel = les donnees dont stockees dans les tables et les tables sont liees entre elles par des relations a travers le concept des cles primaires et cles etrangeres.
+
+Mapping Objet Relationnel est une Operation qui consiste a faire une correspondance entre les donnees qui sont stockees dans une base de donnees avec les objets de l application
+
+JPA = Java Persistence Api est un ensemble d interfaces utilises pour faire le mapping objet relationnel. c est une Api. 
+Hibernate, Toplink, eclipseLink sont des implementations de cette APi
+
+Maven est un outil qui permet de gerer tout le cycle de vie d un projet et de telecharger toutes les dependances d un projet. 
+En gros c est l automatisation de la construction du procesus d un logiciel
+
+la Serialisation c est la transformation d un objet en octet pour envoyer les donnees a une autre application et la deserialisation est la reconstitution de l objet a partir des octets recus.
+
+un java bean est une classe java serialisable(implemente l interface serializable), qui a des attributs prives, des getter et des setter et un constructeur par defaut.
+
+un objet persistent est un objet qui est sauvegarde meme quand on arrete l application, ce qui n est pas le cas d un objet volatile
+
+- Les Avantages d utilisation d un Framework ORM
+	. Gagner en Temps
+	. Portabilite (Une Implementation peut etre utilisee pour plusieurs bases de donnees)
+	. Performance
+	
+il existe 2 moyens pour mapper les entites:
+	. creer des fichiers xml de mapping (separer le code java du mapping objet relationnel)
+	. utliser les annotations jpa (laisses le code independant de hibernate)
+	
+Framework pour l inversion de controle (Spring IOC):
+	. Permettre au developpeur de s occuper uniquement du code metier (Exigences fonctionelles)
+		et c est le framework qui s occupe du code technique
+	
+Serveur web est un serveur http comme apache. Son role est de recevoir des requetes et envoyer des reponses http. Il ne fait pas de traitement.
+Conteneur web (Tomcat) 	= serveur web + moteur de servlet (moteur qui va executer du code cote serveur).
+Serveur d application est un conteneur web + Framework qui fait l inversion de controle
+
+Spring Data est une implementation generique
+
+JSON = javascript object notation
+
+
+Create a new Angular Project = ng new project
+installer bootstrap = npm install --save bootstrap@3
+installer jquery = npm install --save jquery
